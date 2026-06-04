@@ -6,7 +6,7 @@ class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ['id', 'user', 'name', 'type']
-        read_only_fields = ['id']
+        read_only_fields = ['id', 'user']
 
 
 class TransactionSerializer(serializers.ModelSerializer):
