@@ -1,6 +1,4 @@
-from django.shortcuts import render
 from rest_framework import viewsets, permissions
-from django.conf import settings
 from .serializers import CustomUserSerializer
 
 class CustomUserViewSet(viewsets.ModelViewSet):
@@ -10,3 +8,4 @@ class CustomUserViewSet(viewsets.ModelViewSet):
         if self.action == 'create':
             return [permissions.AllowAny()]
         return [permissions.IsAuthenticated()]
+    
