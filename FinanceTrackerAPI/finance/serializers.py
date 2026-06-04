@@ -3,15 +3,15 @@ from .models import Category, Transaction
 
 
 class CategorySerializer(serializers.ModelSerializer):
-    model = Category
     class Meta:
+        model = Category
         fields = ['id', 'user', 'name', 'type']
         read_only_fields = ['id']
 
 
 class TransactionSerializer(serializers.ModelSerializer):
-    model = Transaction
     class Meta:
+        model = Transaction
         fields = ['id', 'amount', 'description', 'date', 'category']
         read_only_fields = ['id', 'user']
 
