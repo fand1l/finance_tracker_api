@@ -20,7 +20,7 @@ class TransactionViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        return Category.objects.filter(user=self.request.user).select_related('category')
+        return Transaction.objects.filter(user=self.request.user).select_related('category')
     
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
